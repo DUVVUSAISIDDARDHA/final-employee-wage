@@ -2,27 +2,28 @@ import random
 
 class Employee:
 
-    def __init__(self,emp_id,emp_name,work_time,wage_per_hour):
+    def __init__(self, emp_id, emp_name, work_time, wage_per_hour):
         self.emp_id = emp_id
         self.emp_name = emp_name
         self.work_time = work_time
         self.wage_per_hour = wage_per_hour
 
     def attendance_check(self):
-        attendance = random.randint(0,1)
-        if attendance == 0:
-           return f"Absent"
-        else:
-           return f"Present"
+        self.attendance = random.randint(0, 1)
+        
 
     def calculate_dialywage(self):
-        if self.attendance_check():
-            dialywages = self.wage_per_hour * self.work_time
-            return f"employee id :{self.emp_id}\n{self.emp_name} is Present\nDialywage for {self.emp_name} is {dialywages}"
+        if self.attendance == 1:
+            self.dialywages = self.work_time * self.wage_per_hour
+            return f"employee id :{self.emp_id}\n{self.emp_name} is Present"
         else:
-            return f"employee id :{self.emp_id}\n{self.emp_name} is Absent ,No wage is generated "
+            self.dialywages = 0
+            return f"employee id :{self.emp_id}\n{self.emp_name} is Absent ,No wage is generated"
 
-         
-
-
-        
+    def part_time_full_time(self):
+        if self.attendance != 1:
+            return ""  
+        if self.work_time > 8:
+            return f"{self.emp_name} is Full time \nFull time wage : {self.dialywages}"
+        else:
+            return f"{self.emp_name} is Part time \nFull time wage : {self.dialywages}" 
