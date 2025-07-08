@@ -22,11 +22,11 @@ class Employee:
             return ""
         match self.work_time:
             case hours if hours > 8:
-                return f"{self.emp_name} is Full time \nFull time wage : {self.dialywages}"
+                return f"{self.emp_name} is Full time \nFull time wage is: {self.dialywages}"
             case hours if hours <= 8:
-                return f"{self.emp_name} is Part time \nFull time wage : {self.dialywages}"
+                return f"{self.emp_name} is Part time \nFull time wage is: {self.dialywages}"
 
-    def calculate_monthly_wage(self):
+    def Calculate_Monthly_Wage(self):
         total_wage = 0
         total_present_days = 0
         total_hours = 0

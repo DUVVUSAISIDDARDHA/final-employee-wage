@@ -12,4 +12,4 @@ employee1 = Employee("id_1", "sai", 9, 25)
 # print(employee1.part_time_full_time())
 
 # UC6 - Monthly Wage Calculation (Assume 20 working days and 100 hours)
-print(employee1.calculate_monthly_wage())
+print(employee1.calculate_Monthly_Wage())
