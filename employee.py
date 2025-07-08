@@ -29,22 +29,26 @@ class Employee:
     def calculate_monthly_wage(self):
         total_wage = 0
         total_present_days = 0
+        total_hours = 0
+        total_days = 0
         result = f"Employee ID: {self.emp_id}, Name: {self.emp_name}\n\n"
 
-        for day in range(1, 21):
+        while total_days < 20 and total_hours + self.work_time <= 100:
+            total_days += 1
             self.attendance_check()
             self.calculate_dialywage()
 
             if self.attendance == 1:
                 status = "Present"
                 total_present_days += 1
+                total_hours += self.work_time
                 type_ = ", Full time" if self.work_time > 8 else ", Part time"
             else:
                 status = "Absent"
                 type_ = ""
 
-            result += f"Day {day} -> {status}{type_}, Work Time: {self.work_time}, Daily Wage: {self.dialywages}\n"
             total_wage += self.dialywages
+            result += f"Day {total_days} -> {status}{type_}, Work Time: {self.work_time}, Daily Wage: {self.dialywages}\n"
 
-        result += f"\nTotal Present Days: {total_present_days}\nTotal Monthly Wage: {total_wage}"
+        result += f"\nTotal Present Days: {total_present_days}\nTotal Hours Worked: {total_hours}\nTotal Wage Till Limit: {total_wage}"
         return result
