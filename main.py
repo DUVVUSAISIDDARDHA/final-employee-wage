@@ -1,15 +1,11 @@
-from employee import Employee
+from company import Company
 
-employee1 = Employee("id_1", "sai", 9, 25)
+# USE CASE 7 -
+my_company = Company("TCS", wage_per_hour=25, max_days=20, max_hours=100)
 
-# UC1 - Attendance Check
-# print(employee1.attendance_check())
 
-# UC2 - Daily Wage Calculation
-# print(employee1.calculate_dialywage())
+my_company.add_employee("id_1", "sai", work_time=9)
+my_company.add_employee("id_2", "ram", work_time=8)
 
-# UC3 - Part Time / Full Time
-# print(employee1.part_time_full_time())
 
-# UC6 - Monthly Wage Calculation (Assume 20 working days and 100 hours)
-print(employee1.calculate_Monthly_Wage())
+my_company.calculate_all_employee_monthly_wage()
