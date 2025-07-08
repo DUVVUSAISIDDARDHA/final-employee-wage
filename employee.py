@@ -23,7 +23,8 @@ class Employee:
     def part_time_full_time(self):
         if self.attendance != 1:
             return ""  
-        if self.work_time > 8:
-            return f"{self.emp_name} is Full time \nFull time wage : {self.dialywages}"
-        else:
-            return f"{self.emp_name} is Part time \nFull time wage : {self.dialywages}" 
+        match self.work_time:
+            case hours if hours > 8:
+                return f"{self.emp_name} is Full time \nFull time wage : {self.dialywages}"
+            case hours if hours <= 8:
+                return f"{self.emp_name} is Part time \nFull time wage : {self.dialywages}"
