@@ -6,6 +6,6 @@ class Employee:
     def attendance_check(self):
         attendance = random.randint(0,1)
         if attendance == 0:
-           print(f"{self.emp_name} is present")
+           print(f"{self.emp_name} is Absent")
         else:
-           print(f"{self.emp_name} is Absent")           
+           print(f"{self.emp_name} is Present")           
