@@ -11,5 +11,5 @@ employee1 = Employee("id_1", "sai", 9, 25)
 # UC3 - Part Time / Full Time
 # print(employee1.part_time_full_time())
 
-# UC5 - Monthly Wage Calculation (Assume 20 working days)
+# UC6 - Monthly Wage Calculation (Assume 20 working days and 100 hours)
 print(employee1.calculate_monthly_wage())
